@@ -1,2 +1,2 @@
 # TOEIC600
-A website to help you learn essential words in the TOEIC test.
+A fake application website where you can learn essential vocabulary words for the TOEIC exam. Definitions, synonyms, and daily word practice are some of the features offered, boost your career with a rich vocabulary.
