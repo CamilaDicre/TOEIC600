@@ -11,6 +11,21 @@ const words = {
         'account' : 'where you save your money',
         'save' : 'to not spent money'
     },
+    '2' : {
+        'pay' : 'give money',
+        'cash' : 'physical money',
+        'card' : 'credit card, debit card'
+    },
+    '3' : {
+        'stock' : 'items to sell',
+        'express' : 'fast, quick',
+        'tax' : 'an extra amount to pay'
+    },
+    '4' : {
+        'balance' : 'something to pay for',
+        'credit' : 'where you save your money',
+        'debit' : 'to not spent money'
+    },
 }
 
 export { units, words }
