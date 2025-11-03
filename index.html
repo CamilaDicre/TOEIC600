@@ -4,6 +4,7 @@
         <!--START Metadata-->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
         <!--END Metadata-->
         <title>TOEIC600</title>
     </head>
@@ -15,7 +16,7 @@
             <div>
                 <h2>A really awesome title!</h2>
                 <p>An inspiring, heartfelt, and supportive paragraph.</p>
-                <button>Call-to-action</button>
+                <button id="buton">Call-to-action</button>
             </div>
             <aside>
                 <img src="https://images2.minutemediacdn.com/image/upload/c_fill,w_1200,ar_4:3,f_auto,q_auto,g_auto/shape/cover/sport/istock-508455188-033183f45ba393ed4745b2dd1213c390.jpg" alt="An awesome image.">
@@ -23,4 +24,10 @@
         </main>
         <footer></footer>
     </body>
+    <script>
+        const btn = document.getElementById("buton");
+        btn.addEventListener("click", () => {
+            window.location.href = "app.html"
+        })
+    </script>
 </html>

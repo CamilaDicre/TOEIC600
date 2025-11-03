@@ -1,0 +1,38 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial;
+}
+
+body {
+    width: 100dvw;
+    height: 100dvh;
+}
+
+header {
+    width: 100%;
+    background-color: red;
+    padding: 2dvw;
+}
+
+main {
+    background-color: grey;
+}
+
+main div {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 2dvw;
+    padding: 2dvw;
+}
+
+main aside img {
+    width: 50dvw;
+    height: 50dvw;
+}
+
+main {
+    display: flex;
+}
