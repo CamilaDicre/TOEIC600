@@ -10,7 +10,11 @@ const secOverview = document.getElementById('overview');
 const secOutline = document.getElementById('outline');
 const secFlashcards = document.getElementById('flashcards');
 
+const container = document.getElementById('flashcardsContainer');
+const ui = document.getElementById('ui');
+
 let cards = [];
+let currentCard = 0;
 
 // FUNCTIONS
 
@@ -23,6 +27,7 @@ function showOverview() {
 function showOutline() {
     secOverview.style.display = 'none'
     secOutline.style.display = 'block'
+    secFlashcards.style.display = 'none'
 
     document.getElementById('unitNameOutline').textContent = units[currentUnit];
     document.getElementById('words').textContent = Object.keys(words[currentUnit]).length;
@@ -39,6 +44,12 @@ function showOutline() {
     };
 };
 
+function renderFlashcard() {
+    container.replaceChildren();
+    container.appendChild(cards[currentCard]);
+    container.firstElementChild.textContent = cards[currentCard].getAttribute('word');
+}
+
 function showFlashcards() {
     secFlashcards.style.display = 'block';
     secOutline.style.display = 'none';
@@ -46,19 +57,74 @@ function showFlashcards() {
 
     document.getElementById('unitNameFlashcards').textContent = units[currentUnit];
 
-    // PREPARE FLASHCARDS
+    // CREATE FLASHCARDS
 
+    console.log(currentUnit);
+
+    for (const word in Object.keys(words[currentUnit])) {
+        let card = document.createElement('div')
+        card.setAttribute('definition', words[currentUnit][Object.keys(words[currentUnit])[word]]);
+        card.setAttribute('word', Object.keys(words[currentUnit])[word]);
+        card.setAttribute('showing', false);
+        card.setAttribute('learnt', false);
+        card.addEventListener('click', () => {
+            card.getAttribute('showing') == "false" ? card.setAttribute('showing', true) : card.setAttribute('showing', false);
+            card.getAttribute('showing') == "false" ? card.textContent = card.getAttribute('word') : card.textContent = card.getAttribute('definition')
+        });
+        cards.push(card);
+    };
+
+    currentCard = 0;
+
+    // RENDER THE FIRST FLASHCARD
+    renderFlashcard();
+    ui.style.display = 'block';
 };
+
+function endFlashcards() { // CLEANS THE FLASHCARD PLAYGROUND
+    container.replaceChildren();
+    cards = [];
+}
 
 // EVENT LISTENERS
 
 document.getElementById('goToOverview').addEventListener('click', () => {
     showOverview();
+    endFlashcards();
     return;
 });
 
 document.getElementById('startFlashcards').addEventListener('click', () => {
     showFlashcards();
+});
+
+document.getElementById('review').addEventListener('click', () => {
+    currentCard += 1;
+    if (currentCard >= cards.length) {
+        currentCard = 0;
+    };
+    console.log(currentCard);
+    renderFlashcard();
+});
+
+document.getElementById('learnt').addEventListener('click', () => {
+    cards[currentCard].setAttribute('learnt', true);
+    cards.splice(currentCard,1);
+
+    if (cards.length <= 0) {
+        endFlashcards();
+        document.getElementById('flashcardsContainer').textContent = 'Congrats! You finished all the flashcards!';
+        ui.style.display = 'none';
+        return;
+    };
+
+    currentCard += 1;
+    if (currentCard >= cards.length) {
+        currentCard = 0;
+    };
+
+    console.log(currentCard);
+    renderFlashcard();
 });
 
 // RENDER FUNCTION
