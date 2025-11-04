@@ -1,7 +1,14 @@
+:root {
+    --primary : hotpink;
+    --secondary : navy;
+    --accent : rgb(255, 219, 219);
+}
+
 * {
     margin: 0px;
     padding: 0px;
     font-family: Arial;
+    box-sizing: border-box;
 }
 
 body {
@@ -9,30 +16,59 @@ body {
     height: 100dvh;
 }
 
-header {
-    width: 100%;
-    background-color: red;
-    padding: 2dvw;
+/* GENERAL PURPOSE CLASSES */
+.btn {
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    border: none;
 }
 
+.headerBtn {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    background-color: var(--accent);
+    padding: clamp(15px, 5dvw, 20px);
+    border-radius: 50px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: clamp(16px, 4vw, 24px);
+}
+
+
+header section {
+    display: flex;
+    gap: 2vw;
+}
+
+/* MAIN */
+
 main {
-    background-color: grey;
+    height: 100%;
+    padding: 2vw 5vw;
+    display: grid;
+    grid-template-rows: 0.5fr 3fr;
+    background-color: var(--secondary);
 }
 
 main div {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: center;
+    text-align: center;
     justify-content: center;
-    gap: 2dvw;
+    gap: 3dvw;
     padding: 2dvw;
-}
-
-main aside img {
-    width: 50dvw;
-    height: 50dvw;
-}
-
-main {
-    display: flex;
 }

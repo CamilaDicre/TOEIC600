@@ -9,23 +9,24 @@
         <title>TOEIC600</title>
     </head>
     <body>
-        <header>
-            <h1>TOEIC600</h1>
-        </header>
         <main>
-            <div>
-                <h2>A really awesome title!</h2>
-                <p>An inspiring, heartfelt, and supportive paragraph.</p>
-                <button id="buton">Call-to-action</button>
+            <header>
+                <h1>TOEIC600</h1>
+                <section id="ui">
+                    <button class="headerBtn btn">Log In</button>
+                    <button class="headerBtn btn">Sign Up</button>
+                </section>
+            </header>
+            <div id="content">
+                <h2 id="carousel">Random words!</h2>
+                <p>Your journey begins here. Learn all the advanced vocabulary words you never knew existed</p>
+                <button id="cta" class="btn">Call-to-action</button>
             </div>
-            <aside>
-                <img src="https://images2.minutemediacdn.com/image/upload/c_fill,w_1200,ar_4:3,f_auto,q_auto,g_auto/shape/cover/sport/istock-508455188-033183f45ba393ed4745b2dd1213c390.jpg" alt="An awesome image.">
-            </aside>
         </main>
         <footer></footer>
     </body>
     <script>
-        const btn = document.getElementById("buton");
+        const btn = document.getElementById("cta");
         btn.addEventListener("click", () => {
             window.location.href = "app/app.html"
         })
