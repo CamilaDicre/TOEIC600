@@ -1,0 +1,143 @@
+:root {
+    --primary : #EF3E36;
+    --secondary : #17BEBB;
+    --tertiary : #FCBA04;
+    --accent : #F3F3F3;
+    --background : #2E282A;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Elms Sans';
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+body {
+    width: 100dvw;
+    height: 100dvh;
+}
+
+/* GENERAL PURPOSE CLASSES */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins';
+}
+
+.btn {
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    border: none;
+}
+
+.headerBtn {
+    background-color: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 8px 25px;
+    transition: all 0.15s;
+}
+
+.headerBtn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    background-color: var(--accent);
+    padding: clamp(10px, 4dvw, 15px) clamp(15px, 5dvw, 20px);
+    border-radius: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: clamp(16px, 4vw, 24px);
+    color: #EF3E36;
+
+}
+
+
+header section {
+    display: flex;
+    gap: 2vw;
+}
+
+/* MAIN */
+
+main {
+    height: 100%;
+    padding: 2vw 5vw;
+    display: grid;
+    grid-template-rows: 0.5fr 3fr;
+    background-image: linear-gradient(45deg, var(--tertiary), hotpink);
+}
+
+main div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 2.5dvw;
+    padding: 2dvw;
+    color: white;
+    font-weight: bold;
+}
+
+main div h2 {
+    animation-timing-function: ease-in-out;
+    animation-duration: 1.5s;
+}
+
+main div p {
+    color: var(--accent);
+}
+
+main div button:hover span {
+    background-image: linear-gradient(45deg, hotpink, var(--tertiary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+main div button {
+    transition: all 0.25s;
+    background-color: var(--primary);
+    color: white;
+}
+
+main div button:hover {
+    background-color: white;
+    transform: translateY(-5px);
+    transform: rotate(5deg);
+}
+
+
+/* VIEWPORT CHANGES */
+main div h2 {
+    font-size: clamp(2.5rem, 2dvw, 4.5rem);
+}
+
+main div p {
+    font-size: clamp(1rem, 2dvw, 1.3rem);
+}
+
+/* KEYFRAMES */
+@keyframes fadeOut {
+    0% {transform: translateX(0px); opacity: 1;} 
+    100% {transform: translateX(100px); opacity: 0;}
+}
+
+@keyframes fadeIn {
+    0% {transform: translateX(-100px); opacity: 0;}
+    80% {transform: translateX(0px); opacity: 1;}
+    100% {transform: translateX(0px); opacity: 1;} 
+}

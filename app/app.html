@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../app/app.css">
+    <title>TOEIC600</title>
+</head>
+<body>
+    <header>
+        <h1><a href="../index.html">TOEIC600</a> > <span id="goToOverview">Vocabulary</span></h1>
+    </header>
+    <main>
+        <section id="overview">
+
+        </section>
+        <section id="outline">
+            <h2 id="unitNameOutline">Template</h2>
+            <p id="wordsInUnit">Words in Unit: <span id="words"></span></p>
+            <button id="startFlashcards">Flashcards</button>
+            <button id="startQuiz">Quiz</button>
+            <ol id="unitSummary"></ol>
+        </section>
+        <section id="flashcards">
+            <h2 id="unitNameFlashcards"></h2>
+            <div id="flashcardsContainer"></div>
+            <div id="ui">
+                <button class="flashcardBtn" id="review">Review</button>
+                <button class="flashcardBtn" id="learnt">Learnt</button>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+<script type="module" src="app.js"></script>
+</html>
