@@ -1,7 +1,26 @@
+import {words} from './app/data.js'
+
 const CAROUSEL = document.getElementById('carousel');
 
-const WORD_BANK = ['Commensurate', 'Tax', 'Account', 'Balance', 'Overdraft', 'Book', 'Return'];
+let WORD_BANK = [];
 let currentWord = 0;
+
+
+function getWords(object) {
+    for (const unit in object) {
+        WORD_BANK = WORD_BANK.concat(Object.keys(object[unit]));
+    }
+    for (const value in WORD_BANK) {
+        WORD_BANK[value] = capitalizeString(WORD_BANK[value]);
+    }
+}
+
+function capitalizeString(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+getWords(words);
+
 
 CAROUSEL.textContent = WORD_BANK[currentWord];
 CAROUSEL.style.animationName = 'fadeOut';

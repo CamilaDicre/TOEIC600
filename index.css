@@ -91,17 +91,43 @@ main div {
     font-weight: bold;
 }
 
-
-/* VIEWPORT CHANGES */
 main div h2 {
-    font-size: clamp(2rem, 2dvw, 2rem);
-    /*animation: fadeOut 3s ease-in-out infinite normal;*/
     animation-timing-function: ease-in-out;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
 }
 
 main div p {
-    font-size: clamp(1rem, 2dvw, 1.5rem);
+    color: var(--accent);
+}
+
+main div button:hover span {
+    background-image: linear-gradient(45deg, hotpink, var(--tertiary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+main div button {
+    transition: all 0.25s;
+    background-color: var(--primary);
+    color: white;
+}
+
+main div button:hover {
+    background-color: white;
+    transform: translateY(-5px);
+    transform: rotate(5deg);
+}
+
+
+/* VIEWPORT CHANGES */
+main div h2 {
+    font-size: clamp(2.5rem, 2dvw, 4.5rem);
+}
+
+main div p {
+    font-size: clamp(1rem, 2dvw, 1.3rem);
 }
 
 /* KEYFRAMES */
@@ -112,5 +138,6 @@ main div p {
 
 @keyframes fadeIn {
     0% {transform: translateX(-100px); opacity: 0;}
+    80% {transform: translateX(0px); opacity: 1;}
     100% {transform: translateX(0px); opacity: 1;} 
 }
